@@ -1,0 +1,9 @@
+The serial version of the program (pi.c) has been compiled through the GCC compiler.
+
+For the parallel version of the program (mpi_pi.c), the compilation has been done with the "mpicc" command and exploiting the openmpi/4.0.3/gnu/9.3.0 module.
+
+Two enhanced versions (one for the strong scalability and one for the weak scalability) of the available script have been implemented, in order to run the same code different times for each processors number P and for each number of iterations N. 
+To submit these scripts on ORFEO, the PBS command "qsub" has been used. All the program executions have been performed on GPU nodes. 
+
+
+
