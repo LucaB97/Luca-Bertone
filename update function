@@ -1,0 +1,26 @@
+int kernel;
+
+int s = (kernel-1) / 2;
+
+short int * new_ptr;
+
+new_ptr = (unsigned short int*)calloc( xsize*ysize, sizeof(short int) );
+
+int current_index;
+
+
+for ( int new_element = 0 ; new_element < x_size*y_size ; new_element++ ) {
+   new_ptr[new_element] = 0;
+   current_index = new_element - s*x_size - s;
+   
+   for (int rows = 0 ; rows < kernel ; rows++) {
+      for (int i=0 ; i < kernel ; i++) {
+         if (current_index >= 0 & current_index < x_size*y_size & ((current_index % x_size) <= ((current_index + kernel + 1) % x_size))) {
+	    new_ptr[new_element] += old_ptr[current_index] * kernel[i];
+	 }
+	 ++current_index;
+      }
+      current_index += size - k - 1;
+   }
+}
+
